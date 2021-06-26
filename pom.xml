@@ -21,10 +21,10 @@
 	</properties>
 
 	<distributionManagement>
-	    <repository>
+	    <snaphsotRepository>
 		<id>nexus</id>
-		<url>http://52.237.88.98:8081/repository/maven-public/</url>
-	    </repository>
+		<url>http://52.237.88.98:8081/repository/maven-snapshots/</url>
+	    </snapshotRepository>
 	</distributionManagement>
 
 	<dependencies>
