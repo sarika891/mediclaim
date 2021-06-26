@@ -19,13 +19,13 @@
 		<java.version>1.8</java.version>
 		<sonar.coverage.exclusions>**mediclaim/*,**/config/*,**/entity/*,**/dto/*,**/repository/*,**/exception/*,**/util/*</sonar.coverage.exclusions>
 	</properties>
+
 	<distributionManagement>
 	    <repository>
-	      <id>nexus</id>
-	      <name>Nexus Staging Repo</name>
-	      <url>http://52.237.88.98:8081/repository/mediclaim/</url>
+		<id>nexus</id>
+		<url>http://52.237.88.98:8081/repository/mediclaim/</url>
 	    </repository>
-        </distributionManagement>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
