@@ -96,5 +96,12 @@
 
 		</plugins>
 	</build>
+	  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>Nexus Staging Repo</name>
+      <url>http://52.237.88.98:8081</url>
+    </repository>
+  </distributionManagement>
 
 </project>
