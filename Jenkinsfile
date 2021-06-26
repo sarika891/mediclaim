@@ -45,5 +45,9 @@ pipeline {
                 }
             }
         }
+        stage (‘Deploy’) {
+            sh ‘ssh ubuntu@18.157.177.45 mkdir -p /tmp/test’
+            sh ‘scp -r target ubuntu@18.157.177.45:/tmp/test’
+        }
     }
 }
