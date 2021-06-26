@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('SCM') {
-            steps {
-                git url: 'https://github.com/peddagorlavasavi/mediclaim.git'
-            }
-        }
         
         stage('SonarQube:Code Analysis') {
             steps {
