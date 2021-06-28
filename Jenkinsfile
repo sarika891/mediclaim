@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         
-        stage('SonarQube:Code Analysis') {
+      /*  stage('SonarQube:Code Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                       sh 'mvn clean package sonar:sonar'
@@ -17,7 +17,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
+        }*/
         
         stage('Publish Test Coverage Report') {
            steps {
