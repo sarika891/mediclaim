@@ -16,6 +16,13 @@
         path: "/opt/{{ app_name }}/"
         owner: root
         group: root
+        
+    - name: create application directory in tmp if doesnot exist
+      file:
+        state: directory
+        path: "/tmp/{{ app_name }}/"
+        owner: root
+        group: root    
   
     - name: Fetch jar file
       get_url:
@@ -26,7 +33,7 @@
         
     - name: Copy jar file to application directory
       copy:
-        src: "/tmp/{{ app_name }}/"
+        src: "/tmp/{{ app_name }}/*.jar"
         dest: "/opt/{{ app_name }}/"
         mode: 0744
             
