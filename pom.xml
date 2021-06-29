@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+l<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -23,7 +23,7 @@
 	<distributionManagement>
 	    <snapshotRepository>
 		<id>nexus</id>
-		<url>http://18.156.34.249:8081/repository/maven-snapshots/</url>
+		<url>http://18.156.34.249:8081/repository/mediclaim/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 
