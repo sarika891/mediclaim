@@ -26,7 +26,7 @@
   
     - name: Fetch jar file
       get_url:
-        url: http://18.156.34.249:8081/repository/maven-snapshots/com/strikers/mediclaim/0.0.1-SNAPSHOT/
+        url: http://18.156.34.249:8081/repository/maven-snapshots/com/strikers/mediclaim/0.0.1-SNAPSHOT/mediclaim-0.0.1-20210629.103925-6.jar
         dest: "/tmp/{{ app_name }}/"
         url_username: admin
         url_password: password
