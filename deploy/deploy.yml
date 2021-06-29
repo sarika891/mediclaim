@@ -2,7 +2,7 @@
 
 - name: Deploy {{ app_name }} playbook
   become: true
-  hosts: all
+  hosts: localhost
   tasks:
 
     - name: Clean  directory for existing files
