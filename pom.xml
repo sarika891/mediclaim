@@ -23,7 +23,7 @@
 	<distributionManagement>
 	    <snapshotRepository>
 		<id>nexus</id>
-		<url>http://18.156.34.249:8081/repository/mediclaim/</url>
+		<url>http://18.156.34.249:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 
