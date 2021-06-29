@@ -9,7 +9,7 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate") {
+       /* stage("Quality Gate") {
             steps {
                 timeout(time: 2, unit: 'MINUTES') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
@@ -17,7 +17,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
+        }*/
         
         stage('Publish Test Coverage Report') {
            steps {
@@ -45,10 +45,9 @@ pipeline {
                 }
             }
         }
-        stage ('Deploy') {
+        stage ('Deploy via ansible') {
             steps {
-            sh 'echo "done"'
-            //sh 'scp -r target ubuntu@18.157.177.45:/tmp/test'
+            ansiblePlaybook become: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventories/dev/hosts', playbook: 'deploy.yml'
             }
         }
     }
