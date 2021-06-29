@@ -24,16 +24,25 @@
         owner: root
         group: root    
   
-    - name: Fetch jar file
-      get_url:
-        url: http://18.156.34.249:8081/repository/maven-snapshots/com/strikers/mediclaim/0.0.1-SNAPSHOT/mediclaim-0.0.1-20210629.103925-6.jar
-        dest: "/tmp/{{ app_name }}/"
-        url_username: admin
-        url_password: password
+    #- name: Fetch jar file
+     # get_url:
+      #  url: http://18.156.34.249:8081/repository/maven-snapshots/com/strikers/mediclaim/0.0.1-SNAPSHOT/mediclaim-0.0.1-20210629.103925-6.jar
+       # dest: "/tmp/{{ app_name }}/"
+       # url_username: admin
+       # url_password: password
         
+    - name: fetch from nexus
+      maven_artifact:
+        group_id: com.strikers.mediclaim
+        artifact_id: 0.0.1-SNAPSHOT
+        extension: jar
+        repository_url: 'http://18.156.34.249:8081/maven-snapshots'
+        dest: /tmp/{{ app_name }}/{{ app_name }}.jar
+        version: latest
+
     - name: Copy jar file to application directory
       copy:
-        src: "/tmp/{{ app_name }}/{{ app_name }}*.jar"
+        src: "/tmp/{{ app_name }}/{{ app_name }}.jar"
         dest: "/opt/{{ app_name }}/"
         mode: 0744
             
