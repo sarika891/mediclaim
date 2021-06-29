@@ -47,7 +47,7 @@ pipeline {
         }
         stage ('Deploy via ansible') {
             steps {
-            ansiblePlaybook become: true, disableHostKeyChecking: true, installation: 'ansible', extras: 'app_name=mediclaim,mysecret=password', inventory: 'deploy/inventories/dev/hosts', playbook: 'deploy/deploy.yml'
+            ansiblePlaybook become: true, disableHostKeyChecking: true, extras: 'app_name=mediclaim,mysecret=password', installation: 'ansible', inventory: 'deploy/inventories/dev/hosts', playbook: 'deploy/deploy.yml'
             }
         }
     }
