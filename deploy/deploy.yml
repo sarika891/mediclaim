@@ -8,7 +8,7 @@
     - name: Clean  directory for existing files
       file:
         state: absent
-        path: "/opt/{{ app_name }"
+        path: "/opt/{{ app_name }}"
 
     - name: create application directory if doesnot exist
       file:
@@ -22,7 +22,7 @@
         url: http://18.156.34.249:8081/repository/maven-snapshots/
         dest: "/tmp/{{ app_name }}/"
         username: admin
-        password: '{{ mysecret }}'
+        password: password
         
     - name: Copy jar file to application directory
       copy:
