@@ -33,7 +33,7 @@
         
     - name: Copy jar file to application directory
       copy:
-        src: "/tmp/{{ app_name }}/*.jar"
+        src: "/tmp/{{ app_name }}/{{ app_name }}*.jar"
         dest: "/opt/{{ app_name }}/"
         mode: 0744
             
