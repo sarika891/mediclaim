@@ -3,6 +3,14 @@
 - name: Deploy {{ app_name }} playbook
   become: true
   hosts: localhost
+  vars:
+    password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          62323035343666363835393538633937663861626433363534303661313135663165376339396238
+          3233326135393863353438373564346436323339613437340a396335326332383037656465643261
+          34616436376663386632373163396634666664306233646263363037336161333830366162623163
+          6131643964393863610a303961666564306365306262663430646365323761363766336165336234
+          6337
   tasks:
 
     - name: Clean  directory for existing files
@@ -33,10 +41,12 @@
         
     - name: fetch from nexus
       maven_artifact:
-        group_id: com.strikers.mediclaim
-        artifact_id: 0.0.1-SNAPSHOT
+        group_id: com.strikers
+        username: admin
+        password: "{{ password }}"
+        artifact_id: mediclaim
         extension: jar
-        repository_url: 'http://18.156.34.249:8081/maven-snapshots'
+        repository_url: 'http://18.156.34.249:8081/repository/maven-snapshots'
         dest: /tmp/{{ app_name }}/{{ app_name }}.jar
         version: latest
 
