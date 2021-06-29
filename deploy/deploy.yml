@@ -21,8 +21,8 @@
       get_url:
         url: http://18.156.34.249:8081/repository/maven-snapshots/
         dest: "/tmp/{{ app_name }}/"
-        username: admin
-        password: password
+        url_username: admin
+        url_password: password
         
     - name: Copy jar file to application directory
       copy:
