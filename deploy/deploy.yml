@@ -1,0 +1,31 @@
+---
+
+- name: Deploy {{ app_name }} playbook
+  become: true
+  tasks:
+
+    - name: Clean  directory for existing files
+      file:
+        state: absent
+        path: "/opt/{{ app_name }"
+
+    - name: create application directory if doesnot exist
+      file:
+        state: directory
+        path: "/opt/{{ app_name }}/"
+        owner: root
+        group: root
+  
+    - name: Fetch jar file
+      get_url:
+        url: http://18.156.34.249:8081/repository/maven-snapshots/
+        dest: "/tmp/{{ app_name }}/"
+        username: admin
+        password: '{{ mysecret }}'
+        
+    - name: Copy jar file to application directory
+      copy:
+        src: "/tmp/{{ app_name }}/"
+        dest: "/opt/{{ app_name }}/"
+        mode: 0744
+            
