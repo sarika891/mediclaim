@@ -67,7 +67,7 @@
       
     - name: print
       debug:
-        msg: {{ mediclaimstatus }}
+        msg: "{{ mediclaimstatus }}"
       
       
             
