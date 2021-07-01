@@ -1,2 +1,2 @@
-[local]
-localhost
+[webservers]
+52.237.88.98 ansible_connection=ssh ansible_ssh_user=ubuntu ansible_ssh_pass=Pass1234567*
