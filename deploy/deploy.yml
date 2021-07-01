@@ -2,7 +2,7 @@
 
 - name: Deploy {{ app_name }} playbook
   become: true
-  hosts: all
+  hosts: localhost
   vars:
     password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
