@@ -61,16 +61,10 @@
         dest: "/opt/{{ app_name }}/"
         mode: 0744
         
-    - name: Run the jar file
-      shell: "( ( nohup java -jar /opt/mediclaim/mediclaim.jar 1>/dev/null 2>&1 ) & )"
-      register: mediclaimstatus
-      become: true
-      poll: 0
-        
       
-    - name: print
-      debug:
-        msg: "{{ mediclaimstatus }}"
-      
+    - name: Restart service 
+      service:
+        state: restarted
+        name: mediclaim
       
             
