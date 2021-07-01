@@ -46,7 +46,7 @@
         password: "{{ password }}"
         artifact_id: mediclaim
         extension: jar
-        repository_url: 'http://18.156.34.249:8081/repository/maven-snapshots'
+        repository_url: 'http://52.237.88.98:8081/repository/maven-snapshots'
         dest: /tmp/{{ app_name }}/{{ app_name }}.jar
         version: latest
 
