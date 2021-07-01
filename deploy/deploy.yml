@@ -62,7 +62,7 @@
         mode: 0744
         
     - name: Run the jar file
-      shell: "/etc/init.d/mediclaim restart"
+      shell: /etc/init.d/mediclaim restart </dev/null >/dev/null 2>&1 &
       async: 10
       poll: 0
       register: mediclaimstatus
