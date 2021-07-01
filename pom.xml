@@ -23,7 +23,7 @@
 	<distributionManagement>
 	    <snapshotRepository>
 		<id>nexus</id>
-		<url>http://52.237.88.98/8081/repository/maven-snapshots/</url>
+		<url>http://52.237.88.98:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 
