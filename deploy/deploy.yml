@@ -65,6 +65,14 @@
       command: "/etc/init.d/mediclaim restart"
       register: mediclaimstatus
       
+    - name: check status of job
+      command: "ps -ef | grep `cat /tmp/mediclaim.pid`"
+      register: mediclaimcheck
+      
+    - name: Print service status  
+      debug: 
+        msg: "mediclaimcheck status: {{ mediclaimcheck }}"
+            
     - name: Print mediclaim service start status  
       debug: 
         msg: "mediclaim status: {{ mediclaimstatus }}"
