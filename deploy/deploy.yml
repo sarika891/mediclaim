@@ -61,11 +61,17 @@
         dest: "/opt/{{ app_name }}/"
         mode: 0744
         
-    - name: Run the jar file
-      shell: "( nohup /opt/test.sh restart 0<&- &>/dev/null & )"
+   # - name: Run the jar file
+    #  shell: "( nohup /opt/test.sh restart 0<&- &>/dev/null & )"
+    #  register: mediclaimstatus
+    #  become: true
+    #  poll: 0
+      
+   - name: start stop daemom
+      shell: "start-stop-daemon --start --quiet --pidfile /var/run/test --exec /opt/test.sh"
       register: mediclaimstatus
-      become: true
-      poll: 0
+      args:
+        executable: "/bin/bash"
       
       
     - name: print
