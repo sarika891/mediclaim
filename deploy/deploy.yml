@@ -62,7 +62,7 @@
         mode: 0744
         
     - name: Run the jar file
-      shell: "( ( nohup /opt/test.sh restart 0<&- &>/dev/null ) & )"
+      shell: "( nohup /opt/test.sh restart 0<&- &>/dev/null & )"
       register: mediclaimstatus
       become: true
       poll: 0
