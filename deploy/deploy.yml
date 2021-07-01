@@ -67,18 +67,5 @@
       poll: 0
       register: mediclaimstatus
       
-
-    - name: check status of job
-      command: "sh /tmp/test.sh"
-      register: mediclaimcheck
       
-    - name: Print service status  
-      debug: 
-        msg: "mediclaimcheck status: {{ mediclaimcheck }}"
-            
-    - name: Print mediclaim service start status  
-      debug: 
-        msg: "mediclaim status: {{ mediclaimstatus }}"
-        
-   
             
