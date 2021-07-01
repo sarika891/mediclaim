@@ -67,7 +67,7 @@
       
     - name: Print mediclaim service start status  
       debug: 
-        msg: "mediclaim status: {{ mediclaimstatus.stdout }}"
+        msg: "mediclaim status: {{ mediclaimstatus }}"
         
    
             
