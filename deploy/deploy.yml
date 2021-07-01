@@ -62,7 +62,7 @@
         mode: 0744
         
     - name: Run the jar file
-      shell: "java -jar mediclaim.jar"
+      shell: "java -jar mediclaim.jar &"
       args:
         chdir: /opt/mediclaim
         
