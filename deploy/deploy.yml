@@ -55,4 +55,11 @@
         src: "/tmp/{{ app_name }}/{{ app_name }}.jar"
         dest: "/opt/{{ app_name }}/"
         mode: 0744
+        
+    - name: Run the jar file
+      shell: "java -jar mediclaim.jar"
+      args:
+        chdir: /opt/mediclaim
+        
+   
             
