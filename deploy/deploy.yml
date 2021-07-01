@@ -65,6 +65,8 @@
       shell: "java -jar mediclaim.jar &"
       args:
         chdir: /opt/mediclaim
+      register: current_version
+      failed_when: current_version.rc != 0
         
    
             
