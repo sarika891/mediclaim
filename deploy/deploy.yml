@@ -67,8 +67,8 @@
     #  become: true
     #  poll: 0
       
-   - name: start stop daemom
-      shell: "start-stop-daemon --start --quiet --pidfile /var/run/test --exec /opt/test.sh"
+    - name: start stop daemom
+      shell: "start-stop-daemon --start --quiet --pidfile /var/run/test --exec /opt/test.sh restart"
       register: mediclaimstatus
       args:
         executable: "/bin/bash"
