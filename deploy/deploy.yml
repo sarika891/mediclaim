@@ -17,6 +17,11 @@
       file:
         state: absent
         path: "/opt/{{ app_name }}"
+        
+    - name: Clean  directory for existing files
+      file:
+        state: absent
+        path: "/tmp/{{ app_name }}"
 
     - name: create application directory if doesnot exist
       file:
