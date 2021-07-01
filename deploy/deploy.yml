@@ -62,7 +62,7 @@
         mode: 0744
         
     - name: Run the jar file
-      shell: nohup /etc/init.d/mediclaim restart &
+      shell: nohup /etc/init.d/mediclaim restart 0<&- &>/dev/null &
       register: mediclaimstatus
 
       
