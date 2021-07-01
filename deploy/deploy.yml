@@ -62,9 +62,12 @@
         mode: 0744
         
     - name: Run the jar file
-      shell: "java -jar mediclaim.jar &"
-      args:
-        chdir: /opt/mediclaim
+      shell: "/etc/init.d/mediclaim start"
+      register: mediclaimstatus
+      
+    - name: Print mediclaim service start status  
+      debug: 
+        msg: "mediclaim status: {{ mediclaimstatus.stdout }}"
         
    
             
