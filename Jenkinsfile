@@ -4,7 +4,7 @@ pipeline {
         
         stage('slack notify') {
             steps {
-                slackSend color: '#439FE0', message: "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                slackSend color: '#439FE0', message: "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|JobLink>)"
             }
         }
         
@@ -64,11 +64,11 @@ pipeline {
     }
   post { 
        success {
-           slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful (<${env.BUILD_URL}|Open>)"
+           slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful (<${env.BUILD_URL}|JobLink>)"
        }
        // triggered when red sign
        failure {
-           slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed (<${env.BUILD_URL}|Open>)"
+           slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed (<${env.BUILD_URL}|JobLink>)"
        }
       always { 
             cleanWs()
