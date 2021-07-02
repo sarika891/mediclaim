@@ -3,7 +3,9 @@ pipeline {
     stages {
         
         stage('slack notify') {
-            slackSend color: '#439FE0', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"'
+            steps {
+                slackSend color: '#439FE0', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"'
+            }
         }
         
         stage('SonarQube:Code Analysis') {
