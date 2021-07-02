@@ -58,7 +58,7 @@ pipeline {
         }
          stage('Run Application') {
             steps {
-                sh 'java -jar /opt/mediclaim/mediclaim.jar'
+                sh 'java -jar /opt/mediclaim/mediclaim.jar &'
             }
         }
     }
