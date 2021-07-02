@@ -2,6 +2,10 @@ pipeline {
     agent any
     stages {
         
+        stage('slack notify') {
+            slackSend color: '#439FE0', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"'
+        }
+        
         stage('SonarQube:Code Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
@@ -57,6 +61,13 @@ pipeline {
         }
     }
   post { 
+       success {
+           slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
+       }
+       // triggered when red sign
+       failure {
+           slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed"
+       }
       always { 
             cleanWs()
         }
