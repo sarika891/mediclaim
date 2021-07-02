@@ -50,5 +50,10 @@ pipeline {
             ansiblePlaybook become: true, vaultCredentialsId: 'ansiblevault', disableHostKeyChecking: true, extras: '-e app_name=mediclaim', installation: 'ansible', inventory: 'deploy/inventories/dev/hosts', playbook: 'deploy/deploy.yml'
             }
         }
+         stage('Run Application') {
+            steps {
+                sh 'java -jar /opt/mediclaim/mediclaim.jar'
+            }
+        }
     }
 }
