@@ -24,6 +24,11 @@ pipeline {
                 }
             }
         }
+        stage('OWASP:Dependency check') {
+            steps {
+                      sh 'mvn dependency-check:check'
+            }
+        }
         
         stage('Publish Test Coverage Report') {
            steps {
