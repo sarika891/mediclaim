@@ -61,10 +61,4 @@
         dest: "/opt/{{ app_name }}/"
         mode: 0744
         
-      
-    - name: Restart service 
-      service:
-        state: restarted
-        name: mediclaim
-      
             
